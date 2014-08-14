@@ -1,9 +1,13 @@
 #!/bin/bash
 
-############################################################################
-# TODO:
-# * We're not validating input
-############################################################################
+die () {
+	echo >&2 "$@";
+	exit 1;
+}
+
+# Validating input
+# TODO: we could check more than just the number of arguments...
+[ "$#" -eq 6 ] || die "6 arguments required, $# provided"
 
 # o stands for origin
 # d stands for destiny
